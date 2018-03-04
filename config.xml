@@ -1,5 +1,5 @@
 <widget xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0" id="net.beework.sitescan" version="1.0.0">
-  <name>Carb Calc</name>
+  <name>Site Scan</name>
   <description>Site Scan.</description>
   <author href="http://www.beework.net" email="bee@beework.net">Bee Apps</author>
   <content src="index.html"/>
