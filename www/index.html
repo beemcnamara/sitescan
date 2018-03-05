@@ -31,12 +31,17 @@
 <script src="http://www.beework.net/siteassets/sitescan/sitestoscan.js"></script>
 <script>
 i = 0;
+numofsites = sites.length
+sitesloaded = 0;
+window.onload = function(){
+document.getElementById("resulttxt").innerHTML=numofsites + " Sites";
+}
 function runauto()
 {
-	if(i < sites.length)
+	if(i < numofsites)
 	{
 	document.getElementById("urlhold").src=sites[i];
-	document.getElementById("urltxt").innerHTML = document.getElementById("urltxt").innerHTML + "<div style='padding:4px;'><a href='" + sites[i] + "' target='_blank'>" + sites[i] + "</a></div>";
+	document.getElementById("urltxt").innerHTML = document.getElementById("urltxt").innerHTML + "<div class='siteentry'><a href='" + sites[i] + "' target='_blank'>" + sites[i] + "</a></div>";
 	i++;
 	setTimeout("runauto()",document.getElementById("delay").value)
 	}
@@ -45,17 +50,19 @@ function runauto()
 
 function addtosites(thisurl)
 {
-document.getElementById("urltxt").innerHTML=document.getElementById("urltxt").innerHTML.replace(thisurl + "</a>",thisurl + "</a> <span class='loaded'>(loaded)</span>")
+document.getElementById("urltxt").innerHTML=document.getElementById("urltxt").innerHTML.replace(thisurl + "</a>",thisurl + "</a> <div class='loaded'>LOADED</div>")
+sitesloaded ++;
+document.getElementById("resulttxt").innerHTML=sitesloaded + '/' + numofsites;
 //document.getElementById("urlload").innerHTML = document.getElementById("urlload").innerHTML + "<br />" + thisurl;
 }
 
 </script>
     </head>
     <body>
-<form>
-<input type="button" value="Run Scan" onclick="runauto()" /> 
+<form id="ctrlform">
+<input type="button" value="Run Scan" onclick="runauto()" id="runbutton" /> 
 <select id="delay"><option value="30000">30 Seconds</option><option value="3000">3 Seconds</option><option value="6000">6 Seconds</option><option value="6000">7 Seconds</option><option value="8000">8 Seconds</option><option value="9000">9 Seconds</option><option value="10000">10 Seconds</option><option value="15000">15 Seconds</option>
-</select>
+</select> <div id="resulttxt"></div>
 </form>
 <iframe id="urlhold" style="width:100%;height:1px;border:0;" onload="addtosites(this.src)"></iframe>
 <p id="urltxt"></p>

@@ -43,7 +43,6 @@ body {
     height:100%;
     margin:0px;
     padding:0px;
-    text-transform:uppercase;
     width:100%;
 
 }
@@ -120,38 +119,6 @@ h1 {
 /*MY ADDITIONS BELOW HERE*/
 
 
-.sitebutton
-{
-	background-color:#051B31;
-	 border:1px solid #6090BE;
-	 border-radius:5px;
-	 color:#ffffff;
-	 padding:10px 10px;
-	 margin:5px;
-	 text-decoration:none;
-	 //text-shadow:#cccccc 1px 1px;
-
-	 display:block;
-	 float:left;
-	 font-size:1.0em;
-	 font-weight:bold;
-}
-.settingsbutton
-{
-	/*same as sitebutton but doesnt float left*/
-		background-color:#051B31;
-	 border:1px solid #6090BE;
-	 border-radius:5px;
-	 color:#ffffff;
-	 padding:10px 10px;
-	 margin:5px;
-	 text-decoration:none;
-	 //text-shadow:#cccccc 1px 1px;
-	text-align:center;
-	 display:block;
-	 font-size:1.0em;
-	 font-weight:bold;
-}
 
 .loaded
 {
@@ -160,9 +127,61 @@ color:#ff0000;
 }
 #urltxt
 {
-position:relative;
-width:90%;
-height:500px;
-overflow:auto;
+width:auto;
+max-width:100%;
+overflow:hidden;
 
+
+}
+
+#urltxt a{
+	text-decoration:none;
+}
+
+#ctrlform
+{
+padding:10px;
+background-color:#003366;
+color:#ffffff;
+}
+
+#runbutton
+{
+	background-color:#CC3300;
+	border-radius:6px;
+	border:0;
+	color:#ffffff;
+	padding:6px 12px;
+	text-shadow:#660000 1px 2px;
+	cursor:pointer;
+}
+
+#resulttxt
+{
+	float:right;
+}
+body{
+	padding:0;
+	margin:0;
+}
+
+.siteentry
+{
+	padding:4px;
+	width:100%;
+	overflow:hidden;
+	float:left;
+	background-color:#DFE1E6;
+	color:#ffffff;
+	margin:5px 0;
+}
+
+.loaded
+{
+	background-color:#CC3333;
+	color:#ffffff;
+	width:100%;
+	text-align:center;
+	margin:6px 0 0 -4px;
+	padding:4px 0;
 }
